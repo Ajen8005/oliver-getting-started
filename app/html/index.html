@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Example Post and Get</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.fifth{
+  float: left;
+  width: 33.33%;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+.button {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+<body>
+
+  
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-black">Home</a>
+  </div>
+
+
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">Home</a>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-container w3-light-grey w3-center" style="padding:64px 16px">
+
+  <div class = "w3-container w3-center">
+    <form class= "w3-center" action="/myGETAPI" method="GET">
+      <div class = "w3-card">
+        <div class = "w3-blue w3-padding-small">
+          <p>Test GET</p>
+        </div>
+        <div class = "w3-padding-16">
+            <!-- The Name is very important that is the field that you need to search for -->
+          <input type="text" name="changeMeToQuery" placeholder="Enter text to return"/>
+          <input type="submit" value="Click here to do a get request"/>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class = "w3-container w3-center">
+    <form class= "w3-center" action="/showDatabase" method="GET">
+      <div class = "w3-card">
+        <div class = "w3-blue w3-padding-small">
+          <p>Test mySQL Interaction</p>
+        </div>
+        <div class = "w3-padding-16">
+            <!-- The Name is very important that is the field that you need to search for -->
+          <input type="submit" value="Click here to get all databases"/>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</header>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
