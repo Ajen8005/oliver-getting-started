@@ -78,11 +78,26 @@ a.button {
     <form class= "w3-center" action="/showDatabase" method="GET">
       <div class = "w3-card">
         <div class = "w3-blue w3-padding-small">
-          <p>Test mySQL Interaction</p>
+          <p>Test mySQL Interaction with Node.js</p>
         </div>
         <div class = "w3-padding-16">
             <!-- The Name is very important that is the field that you need to search for -->
           <input type="submit" value="Click here to get all databases"/>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class = "w3-container w3-center">
+    <form class= "w3-center" action="/createDatabasePYTHON" method="GET">
+      <div class = "w3-card">
+        <div class = "w3-blue w3-padding-small">
+          <p>Test Python Scripting with Node JS</p>
+        </div>
+        <div class = "w3-padding-16">
+            <!-- The Name is very important that is the field that you need to search for -->
+          <input type="text" name="changeMeToQuery" placeholder="database name"/>
+          <input type="submit" value="Click here to add a database"/>
         </div>
       </div>
     </form>

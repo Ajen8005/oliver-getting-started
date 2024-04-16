@@ -41,6 +41,7 @@ app.get('/myGETAPI', (req, res) => {
 });
 
 // Displaying database in console.log
+// Example GET API with using Node.JS to interface with SQL
 app.get('/showDatabase', (req, res) => {
   con.query("SHOW DATABASES", function (err, result) {
     var sql_res = "Displaying Databases\n"
@@ -59,6 +60,25 @@ app.get('/showDatabase', (req, res) => {
 
   res.send("Success!");
 });
+
+// Example GET_API for using a python script
+app.get('/createDatabasePYTHON', (req, res) => {
+  // Grabbing the GET data sent into the website
+  response = {
+    // You can reference the index.html and see that we are Querying for the Name object
+    Name:req.query.changeMeToQuery
+  }
+  let python = spawn('py', [path.join(__dirname) + '/python/create_database.py', response.Name]);
+  python.stdout.on('data', function (data) {
+        console.log("PYTHON SENT: ", data.toString());
+      });
+  python.on('close', (code) => {
+    console.log(`Finished Python Script with Exit Code: ${code}`); 
+  });
+  res.send("Created Database");
+});
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
